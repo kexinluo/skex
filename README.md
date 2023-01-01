@@ -1,2 +1,0 @@
-# skex
-Skex - Learn Kex
