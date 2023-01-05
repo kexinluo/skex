@@ -10,7 +10,7 @@
 
 @font-face {
 	font-family: Kex Sans;
-	src: url("/res/fonts/Kex-Regular3.ttf");
+	src: url("/res/fonts/Kex-Regular.ttf");
 }
 
 @font-face {
@@ -124,14 +124,22 @@ p strong {
 	margin-top: 50px;
 }
 
+#paper h2::before {
+	content: "> ";
+	color: hsl(216, 60%, 60%);
+}
+
+#paper h2 {
+	font-size: 17pt;
+	margin-top: 50px;
+}
+
 ::selection {
-	color: white;
-	background-color: hsl(216, 60%, 60%);
+	background-color: hsla(216, 60%, 60%, 0.5);
 }
 
 ::-moz-selection {
-	color: white;
-	background-color: hsl(216, 60%, 60%);
+	background-color: hsla(216, 60%, 60%, 0.5);
 }
 
 a {
@@ -173,12 +181,8 @@ nav a:hover, nav div:hover {
 	color: white;
 }
 
-i:not(.lb) {
+i {
 	margin: 0 10px 0 10px;
-}
-
-i .lb {
-	margin: 0;
 }
 
 button {
@@ -193,6 +197,19 @@ button {
 
 button:hover {
 	filter: brightness(0.8);
+}
+
+button.function {
+	border-color: hsl(216, 60%, 40%);
+	background: hsl(216, 60%, 60%);
+	color: white;
+	margin: 10px;
+	padding: 10px;
+	cursor: pointer;
+}
+
+button.function:active {
+	filter: brightness(0.5);
 }
 
 .table-out {
@@ -238,6 +255,12 @@ table.center td, table.center th {
 	color: blue;
 }
 
+#paper .wblue {
+	display: inline;
+	background: aliceblue;
+	color: steelblue;
+}
+
 #paper .green {
 	display: inline;
 	background: lightgreen;
@@ -256,15 +279,20 @@ table.center td, table.center th {
 	color: black;
 }
 
+#paper .wrap {
+	border-radius: 5px;
+	padding: 5px;
+}
+
 spk::before {
-	content: "Wi";
+	content: "🔊";
 	color: rgba(0, 0, 0, 0);
 	background: url("/res/volume-high-solid.svg") no-repeat;
 }
 
 div.dict {
 	background: hsla(216, 60%, 60%, 0.1);
-	margin: auto;
+	margin: 20px auto;
 	padding: 20px;
 	border-radius: 20px;
 	border-left: 10px solid hsl(216, 60%, 60%);
@@ -297,7 +325,7 @@ img.il {
 
 div.exercise {
 	background: hsla(150, 60%, 60%, 0.1);
-	margin: auto;
+	margin: 20px auto;
 	padding: 20px;
 	border-radius: 20px;
 	border-left: 10px solid hsl(150, 60%, 60%);
@@ -314,6 +342,20 @@ div.exercise > div {
 	margin: 20px 0 0 0;
 }
 
+div.example {
+	background: rgba(0, 128, 128, 0.1);
+	margin: 20px auto;
+	padding: 20px;
+	border-radius: 20px;
+	border-left: 10px solid rgb(0, 128, 128);
+	box-shadow: 5px 5px 5px #CCC;
+}
+
+div.example .translation {
+	color: grey;
+	display: inline;
+}
+
 p.index {
 	display: inline;
 	border-radius: 5px;
@@ -327,4 +369,64 @@ p.question {
 	font-weight: bold;
 	color: hsl(150, 60%, 60%);
 	display: inline;
+}
+
+lb.ico {
+	display: inline;
+	margin: 0 5px 0 5px;
+}
+
+lb.ico::before {
+	color: white;
+	padding: 5px 10px 0px 10px;
+	font-size: 13pt;
+}
+
+lb.IPA::before {
+	content: "IPA";
+	background: rgb(14, 209, 69);
+}
+
+lb.La::before {
+	content: "La";
+	background: rgb(92, 141, 214);
+}
+
+lb.n::before {
+	content: "n.";
+	background: rgb(88, 88, 88);
+}
+
+lb.v::before {
+	content: "v.";
+	background: rgb(184, 61, 186);
+}
+
+lb.eg::before {
+	content: "例";
+	background: rgb(88, 88, 88);
+}
+
+lb.tr::before {
+	content: "译";
+	background: teal;
+}
+
+textarea {
+	display: block;
+	resize: none;
+	font-size: 20pt;
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	outline: none;
+	border: 1px solid #5C8DD6;
+	border-radius: 5px;
+	background: hsl(216, 10%, 97%);
+	transition: background 0.2s;
+	-webkit-transition: background 0.2s;
+}
+
+textarea:focus {
+	background: hsl(216, 10%, 90%);
 }
